@@ -17,7 +17,7 @@ int main() {
     int chute;
     int acertou = 0;
     int nivel;
-    int tentativas = 1;
+    int chutesdados = 1;
     double pontos = 1000;
 
     srand(time(0));
@@ -28,25 +28,25 @@ int main() {
     printf("Escolha: ");
     scanf("%d", &nivel);
 
-    int numerodetentativas;
+    int numerodechutesdados;
 
     switch(nivel) {
         case 1:
-            numerodetentativas = 20;
+            numerodechutesdados = 20;
             break;
 
         case 2:
-            numerodetentativas = 15;
+            numerodechutesdados = 15;
             break;
         
         default:
-            numerodetentativas = 6;
+            numerodechutesdados = 6;
             break;
     }
     
-    for(int i = 1; i <= numerodetentativas; i++) {
+    for(int i = 1; i <= numerodechutesdados; i++) {
 
-        printf("Tentativa %d\n", tentativas);
+        printf("Tentativa %d\n", chutesdados);
         printf("Qual é o seu chute? ");
         scanf("%d", &chute);
         printf("\nSeu chute foi %d \n", chute);
@@ -67,7 +67,7 @@ int main() {
             printf("Seu chute foi menor que o número secreto!\n\n");
         }
 
-        tentativas++;
+        chutesdados++;
 
         double pontosperdidos = (double)(chute - numerosecreto) / (double)2;
         pontos = pontos - abs(pontosperdidos);
@@ -96,7 +96,7 @@ int main() {
         printf("\n\n");
 
         printf("Parabéns! Você ganhou!\n");
-        printf("Você acertou em %d tentativas!\n", tentativas);
+        printf("Você acertou em %d chutesdados!\n", chutesdados);
         printf("Total de pontos: %.1f\n", pontos);
 
     } else {
